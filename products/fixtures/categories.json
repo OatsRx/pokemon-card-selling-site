@@ -1,0 +1,26 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "singles",
+      "friendly_name": "Singles"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "packs",
+      "friendly_name": "Packs"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+      "name": "boxs",
+      "friendly_name": "Collection Box"
+    }
+  }
+]
