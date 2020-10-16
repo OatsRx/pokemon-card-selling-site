@@ -41,16 +41,16 @@
     <title>Flamin' Pidgey Cards {% block extra_title %}{% endblock %}</title>
   </head>
 
-  <!-- body starts -->
   <body>
 	<!-- header taken from previous project -->
 	<header class="container-fluid fixed-top">
-		<div class="row">
+		<div id="top-nav" class="row bg-grey text-white pt-lg-2 d-none d-lg-flex">
 			<div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
 				<a href="{% url 'home' %}" class="nav-link main-logo-link">
 					<h2 class="logo-font text-black my-0">Flamin' Pidgey Cards</h2>
 				</a>
 			</div>
+	      <!-- search bar -->
 			<div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
 				<form method="GET" action="">
 					<div class="input-group w-100">
@@ -65,6 +65,7 @@
 					</div>
 				</form>
 			</div>
+	      <!-- accont/registration -->
 			<div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
 				<ul class="list-inline list-unstyled text-center text-lg-right my-0">
 					<li class="list-inline-item dropdown">
@@ -88,6 +89,7 @@
 							{% endif %}
 						</div>
 					</li>
+                    <!-- basket/total -->
 					<li class="list-inline-item">
 						<a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
 							href="">
@@ -105,6 +107,15 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div class="bg-grey">
+			<!-- navbar taken from bootstrap documentation -->
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<ul></ul>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				</button>
+			</nav>
 		</div>
 	</header>
 	<!-- header ends -->
