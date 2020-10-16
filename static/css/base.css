@@ -28,7 +28,7 @@ body {
     color: #000 !important;  
 }
 
-/* media queries */
+/*............. media queries */
 
 /* larger container on larger screens */
 @media (min-width: 1200px) {
