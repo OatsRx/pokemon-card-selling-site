@@ -28,6 +28,10 @@ body {
     color: #000 !important;  
 }
 
+.text-white {
+    color: #fff !important;  
+}
+
 /*............. media queries */
 
 /* larger container on larger screens */
