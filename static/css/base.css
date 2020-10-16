@@ -3,9 +3,47 @@ html {
 }
 
 body {
-    background: url('media/alcreamie_championspath_wallpaper') no-repeat center center fixed;
+    background: url('/media/alcreamie_championspath_wallpaper') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #000;
-    /*font-family: ;*/
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.enter-shop-button {
+    background: #000;
+    color: #fff;
+    min-width: 240px;
+}
+
+.text-black {
+    color: #000 !important;  
+}
+
+/* media queries */
+
+/* larger container on larger screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and larger screens */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
