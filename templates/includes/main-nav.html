@@ -17,12 +17,10 @@
 				Sealed Packs
 			</a>
 			<div class="dropdown-menu" aria-labelledby="sealed-packs-link">
-				<a class="dropdown-item" href="#">All Packs</a>
-				<a class="dropdown-item" href="#">Champions Path</a>				
-				<a class="dropdown-item" href="#">Hidden Fates</a>
-				<a class="dropdown-item" href="#">Cosmic Eclipse</a>
-				<a class="dropdown-item" href="#">Jungle Base Set</a>
-				<a class="dropdown-item" href="#">Fossil Base Set</a>
+				<a class="dropdown-item" href="{% url 'products' %}?category=packs">All New Packs</a>
+				<a class="dropdown-item" href="{% url 'products' %}?category=packs">Champions Path</a>				
+				<a class="dropdown-item" href="{% url 'products' %}?category=packs">Hidden Fates</a>
+				<a class="dropdown-item" href="{% url 'products' %}?category=packs">Cosmic Eclipse</a>				
 			</div>
 		</li>
         <li class="nav-item dropdown">

@@ -49,10 +49,6 @@ body {
     z-index: -1;
 }
 
-.callout-container {
-    align-content: center !important;
-}
-
 /*............. media queries */
 
 /* larger container on larger screens */
