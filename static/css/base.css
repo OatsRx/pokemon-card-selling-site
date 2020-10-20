@@ -37,8 +37,7 @@ body {
     border-radius: 25px;
     top: 0;
     margin: auto;
-    position: center;
-    background: rgb(100, 100, 100);;
+    background-color: rgb(100, 100, 100);;
     z-index: -1;
 }
 
@@ -63,5 +62,16 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* padding for mobile and medium header */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }

@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay text-white">
+<div class="overlay text-white bg-dark">
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
@@ -18,21 +18,23 @@
                 <hr class="w-50 mb-1">
             </div>            
         </div>
-        </div>
-        </div>
-        <div class="row">
+    </div>
+</div>
+    <div class="overlay text-black bg-dark">
+        <div class="row mt-3">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
+                            <!-- card structure taken from bootstrap documentation -->
+                            <div class="card h-100 border-0 bg-dark text-white">
                                 {% if product.image %}
-                                <a href="">
+                                <a href="{% url 'product_info' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'product_info' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
@@ -40,12 +42,16 @@
                                     <p class="mb-0">{{ product.name }}</p>
                                 </div>
                                 <div class="card-body pb-0">
+                                 {% if product.rarity %}
                                     <p class="mb-0">{{ product.rarity }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                {% else %}
+                                    <h2 class="">New</h2>
+                                {% endif %}
+                                </div>                                
+                                <div class="card-footer bg-dark pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">Price: ${{ product.price }}</p>                                            
+                                            <h2 class="lead mb-0 text-left font-weight-bold">Price: ${{ product.price }}</h2>                                            
                                         </div>
                                     </div>
                                 </div>
@@ -77,4 +83,5 @@
             </div>
         </div>
     </div>
+    
 {% endblock %}

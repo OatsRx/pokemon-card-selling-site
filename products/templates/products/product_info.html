@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+	<div class="row">
+		<div class="col"></div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay text-white">
+    <div class="container-fluid pt-sm-5 pt-md-5">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="image-container my-4">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}" target="blank">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="product-info-container my-5">
+                    <h1 class="d-2">{{ product.name }}</h1>
+                    <br/>
+                    <h2 class="d-3">Price: £{{ product.price }}</h2>
+                    <br/>
+                    {% if product.rarity %}
+                        <h2 class="d-3">Rarity: {{ product.rarity }}</h2>
+                    {% else %}
+                        <h2 class="font-weight-bold">New</h2>
+                    {% endif %}
+                </div>
+            </div>                       
+        </div>
+    </div>
+</div>
+{% endblock %}
