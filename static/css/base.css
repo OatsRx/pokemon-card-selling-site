@@ -18,6 +18,14 @@ body {
     background-color: rgb(100, 100, 100);
 }
 
+.bg-yellow {
+    background-color: #ffcb05 !important;
+}
+
+.border-curved {
+     border-radius: 25px !important;
+}
+
 .enter-shop-button {
     background: #000;
     color: #fff;
@@ -39,6 +47,10 @@ body {
     margin: auto;
     background-color: rgb(100, 100, 100);;
     z-index: -1;
+}
+
+.callout-container {
+    align-content: center !important;
 }
 
 /*............. media queries */

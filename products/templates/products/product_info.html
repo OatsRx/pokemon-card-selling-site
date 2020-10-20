@@ -29,14 +29,14 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-info-container my-5">
                     <h1 class="d-2">{{ product.name }}</h1>
-                    <br/>
-                    <h2 class="d-3">Price: £{{ product.price }}</h2>
-                    <br/>
+                    <br/>                                        
                     {% if product.rarity %}
                         <h2 class="d-3">Rarity: {{ product.rarity }}</h2>
                     {% else %}
                         <h2 class="font-weight-bold">New</h2>
                     {% endif %}
+                    <br/>
+                    <h2 class="d-3">Price: £{{ product.price }}</h2>
                 </div>
             </div>                       
         </div>
