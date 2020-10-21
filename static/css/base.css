@@ -22,6 +22,11 @@ body {
     background-color: #ffcb05 !important;
 }
 
+.text-yellow {
+    color: #ffcb05 !important;
+    text-transform: None !important;
+}
+
 .border-curved {
      border-radius: 25px !important;
 }

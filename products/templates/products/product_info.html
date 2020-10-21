@@ -27,8 +27,15 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-info-container my-5">
+                <div class="product-info-container my-5">                    
                     <h1 class="d-2">{{ product.name }}</h1>
+                    {% if product.category %}
+                        <p class=" mt-1 mb-0">
+                            <a class="text-white" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                         </p>
+                    {% endif %}
                     <br/>                                        
                     {% if product.rarity %}
                         <h2 class="d-3">Rarity: {{ product.rarity }}</h2>
