@@ -13,7 +13,7 @@
 			</div>
 		</li>
         <li class="nav-item dropdown">
-			<a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="nav-link text-white" href="{% url 'products' %}?category=packs" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Sealed Packs
 			</a>
 			<div class="dropdown-menu" aria-labelledby="sealed-packs-link">
@@ -24,30 +24,26 @@
 			</div>
 		</li>
         <li class="nav-item dropdown">
-			<a class="nav-link text-white" href="#" id="single-cards" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="nav-link text-white" href="{% url 'products' %}?category=single_cards" id="single-cards" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Single Cards
 			</a>
 			<div class="dropdown-menu" aria-labelledby="single-cards-link">				
-				<a class="dropdown-item" href="#">Champions Path</a>								
+				<a class="dropdown-item" href="{% url 'products' %}?category=single_cards">Champions Path</a>								
 			</div>
 		</li>
         <li class="nav-item dropdown">
-			<a class="nav-link text-white" href="#" id="collection-box" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="nav-link text-white" href="{% url 'products' %}?category=collection_box" id="collection-box" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Collection Box's
 			</a>
 			<div class="dropdown-menu" aria-labelledby="collection-box-link">				
-				<a class="dropdown-item" href="#">Champions Path</a>								
+				<a class="dropdown-item" href="{% url 'products' %}?category=collection_box">Champions Path</a>								
 			</div>
 		</li>
-        <li class="nav-item dropdown">
-			<a class="nav-link text-white" href="#" id="vintage-packs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+			<a class="nav-link text-white" href="{% url 'products' %}?category=vintage" id="vintage-packs" role="button" aria-haspopup="true" aria-expanded="false">
 				Vintage
 			</a>
-			<div class="dropdown-menu" aria-labelledby="vintage-cards-link">				
-				<a class="dropdown-item" href="#">Jungle Base-Set</a>
-				<a class="dropdown-item" href="#">Fossil Base-Set</a>								
-				<a class="dropdown-item" href="#">Skyridge E-Series</a>																
-			</div>
+			
 		</li>
 	</ul>
 </div>
