@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay bg-yellow">
+<div class="overlay bg-yellow">
     <div class="container mb-2 pb-3">
         <div class="row">
             <div class="col pt-2">           
@@ -47,6 +47,9 @@
                                     </td>
                                     <td class="py-3 w-25">
                                         <p class="my-0">{{ item.quantity }}</p>
+                                        <!--REMOVE BUTTON-->
+                                        <a class="text-danger remove-item" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        <!--REMOVE BUTTON-->
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
@@ -92,3 +95,23 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+
+<script>
+    // Remove item from bag
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+{% endblock %}
+
+
