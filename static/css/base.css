@@ -54,10 +54,6 @@ body {
     z-index: -1;
 }
 
-.inline {
-    display: inline-block !important;
-}
-
 /*............. media queries */
 
 /* larger container on larger screens */
