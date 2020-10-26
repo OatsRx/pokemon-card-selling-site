@@ -64,6 +64,10 @@ body {
     overflow-y: auto;
 }
 
+.stripe-input {
+    
+}
+
 /*............. Toasts */
 .message-container {
     position: fixed;
