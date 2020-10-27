@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block page_header %}
@@ -11,25 +12,123 @@
 
 {% block content %}
 <div class="overlay bg-yellow">
-    <div class="container mb-2 pb-3">
-        <div class="row">
-            <div class="col pt-2">           
-                <h2 class="logo-font mb-4">Checkout</h2>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p>Please enter your delivery details below</p>
-                <br>
-                <form method="POST" action="">
-                    {% csrf_token %}
-                    {{order_form}}
-                </form>
-
-            </div>
-        </div>
+	<div class="container mb-2 pb-3">
+		<div class="row">
+			<div class="col pt-2">
+				<h2 class="logo-font mb-4">Checkout</h2>
+				<hr>
+			</div>
+		</div>
+		<!-- Order summary -->
+		<div class="row">
+			<div class="col-6 col-lg-6 order-last">
+				<table class="table table-sm table-borderless hidden-xs">
+					<thead class="text-black">
+						<tr>
+							<th scope="col">Product Info</th>
+							<th scope="col"></th>
+							<th scope="col">Price</th>
+							<th scope="col">Qty</th>
+							<th scope="col">Subtotal</th>
+						</tr>
+					</thead>
+					{% for item in shopping_bag_items %}
+					<tr>
+						<td class="p-3 w-25">
+							<img class="img-fluid" src="{{ item.product.image.url }}">
+                            </td>
+						<td class="py-3">
+							<p class="my-0"><strong>{{ item.product.name }}</strong></p>
+							<p class="my-0 small">SKU: {{ item.product.sku|upper }}</p>
+						</td>
+						<td class="py-3">
+							<p class="my-0">£{{ item.product.price }}</p>
+						</td>
+						<td class="py-3 w-25">
+							<p class="my-0">{{ item.quantity }}</p>
+						</td>
+						<td class="py-3">
+							<p class="my-0">${{ item.product.price }}</p>
+						</td>
+					</tr>
+					{% endfor %}
+					<tr>
+						<td colspan="5" class="pt-5 text-right">
+							<h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+							<h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+							<h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5" class="text-right">
+							<a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+								<span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+								<span class="text-uppercase">Back to Shop</span>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-12 col-lg-6">
+				<p>Please enter your billing and delivery details below</p>
+				<p class="text-muted">**UK delivery only**</p>
+				<br>
+				<!-- delivery form -->
+				<form method="POST" action="{% url 'checkout'%}" id="payment-form">
+					{% csrf_token %}
+					<div class="row">
+						<strong><p>Details:</p></strong>
+						<div class="col-6">
+							{{order_form.full_name|as_crispy_field}}
+							{{order_form.email|as_crispy_field}}
+							{{order_form.phone_number|as_crispy_field}}
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<strong><p>Address: </p></strong>
+						<div class="col-6">
+							{{order_form.street_address1|as_crispy_field}}
+							{{order_form.street_address2|as_crispy_field}}
+							{{order_form.town_or_city|as_crispy_field}}
+							{{order_form.postcode|as_crispy_field}}
+							{{order_form.country|as_crispy_field}}
+							{{order_form.county|as_crispy_field}}
+						</div>
+					</div>				
+					<!-- save delivery info checkbox -->
+					<div class="form-check form-check-inline mr-0">
+						{% if user.is_authenticated %}
+						<label class="form-check-label" for="id-save-info">Save this delivery information for future purchases</label>
+						<input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
+                        {% else %}
+						<label class="form-check-label" for="id-save-info">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create Account</a> or 
+                                <a class="text-info" href="{% url 'account_login' %}">Login</a> to save your delivery information
+                            </label>
+						{% endif %}
+					</div>
+					<hr>
+					<div class="row">
+						<strong><p>Payment:</p></strong>
+						<div class="col-6" id="card-element"></div>
+						<div class="col-6" id="card-errors"></div>
+					</div>
+                    <hr>
+					<div class="btn text-right bg-yellow text-black">
+						<button id="submit-button" class="btn bg-yellow text-black">
+                            <strong><span class="text-uppercase">Complete Order</span></strong>
+                            <span class="icon">
+                                <i class="fas fa-money-check"></i>
+                            </span>
+                        </button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<br>
     </div>
-</div>
+	</div>
 {% endblock %}
