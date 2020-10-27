@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay bg-yellow">
+	<div class="container mb-2 pb-3">
+		<div class="row">
+			<div class="col pt-2">
+				<h2 class="mb-4">Thanks! Your order was successful! :)</h2>
+				<hr>
+                <p>A confirmation of your order will be sent to:</p><strong><i>{{order.email}}</i></strong>
+			</div>
+		</div>
+        <hr>
+		<a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span class="text-uppercase">Back to Shop</span>
+        </a>
+		<br>
+    </div>
+	</div>
+{% endblock %}
