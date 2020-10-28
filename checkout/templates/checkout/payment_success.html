@@ -14,13 +14,56 @@
 <div class="overlay bg-yellow">
 	<div class="container mb-2 pb-3">
 		<div class="row">
-			<div class="col pt-2">
-				<h2 class="mb-4">Thanks! Your order was successful! :)</h2>
+			<div class="col-12 pt-2">
+				<h2 class="mb-4">Thanks! Your order was successful!</h2>
 				<hr>
                 <p>A confirmation of your order will be sent to:</p><strong><i>{{order.email}}</i></strong>
+			</div>                    
+		</div>
+        <hr>
+		<div class="row">
+			<div class="col-12">
+				<strong><p>Order Reference:</p></strong>
+			</div>
+			<div class="col-12">
+				<p>{{order.order_number}}</p>
 			</div>
 		</div>
         <hr>
+		<div class="row">
+			<div class="col-12">
+				<strong><p>Billing:</p></strong>
+			</div>
+			<div class="col-12">
+				<p>£{{order.grand_total}}</p>
+				<p>{{order.date}}</p>
+			</div>
+		</div>
+        <hr>        
+		<div class="row">
+			<div class="col-12">
+				<strong><p>Order Summary:</p></strong>
+			</div>
+            {% for item in order.lineitems.all %}
+			<div class="col-12">
+				<p>{{item.product.name}} x{{item.quantity}} £{{item.product.price}}</p>
+			</div>
+            {% endfor %}
+		</div>
+        <hr>
+		<div class="row">
+			<div class="col-12">
+				<strong><p>Delivering to:</p></strong>
+			</div>
+			<div class="col-12 pb-2">
+				<p>{{order.full_name}}</p>
+				<p>{{order.street_address1}}</p>
+                <p>{%if order.street_address2%}{{order.street_address2}}{%endif%}</p>
+                <p>{{order.town_or_city}}</p>
+                <p>{%if order.postcode%}{{order.postcode}}{% endif %}</p>
+
+			</div>
+		</div>
 		<a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
             <span class="icon">
                 <i class="fas fa-chevron-left"></i>
@@ -29,5 +72,5 @@
         </a>
 		<br>
     </div>
-	</div>
+</div>
 {% endblock %}
