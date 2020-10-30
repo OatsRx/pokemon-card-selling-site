@@ -1,5 +1,6 @@
 # Flamin Pidgey Trading Card Store 
 
+[Project Demo](#) 
 ## Project Purpose
 The purpose of this project is to allow the site manager (myself) to move away from 3rd party selling
 websites to house my own store selling trading cards. 
@@ -24,12 +25,12 @@ Current features of the app allow customers to purchase trading cards to deliver
 As a user you have the ability to browse products by category, sort products by a variety of filters, search
 for a specific product in the search bar and add them to a shopping basket.
 
-### Checkout
+#### Checkout
 As a user you have the ability to add and remove products from your shopping bag and continue through to
 as secure checkout powered by Stripe payment system. The user has the option to check out as a guest or
 save their detail into a profile for future purcases.
 
-### User Profiles
+#### User Profiles
 Users have the option to save their details during a transaction to use in the future. Profile page also
 shows a breakdown of previous purchases in an order history display. 
 
@@ -39,7 +40,7 @@ as I will be the one managing the site. Given that I will be uploading products 
 will be implementing more fixtures and a diffrent database layout to accomodate for more variety of product 
 categories. 
 
-## Technologies used
+## Technologies Used
 
 ### Languages
 1. HTML
@@ -57,6 +58,9 @@ categories.
 ### Deployment
 1. Heroku
 2. AWS
+
+#### Webhooks
+The webhooks for this project were taken from the previous mini project and modified accordingly.
 
 ## Testing
 
