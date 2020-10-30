@@ -81,6 +81,10 @@ that automatically commits from GitHub with environment variables being added ma
 app was deploying through GitPod on Opera and requires installation of the requirements.txt
 
 ## Credits
-Massive thanks to all of the CI tutors for allof there help. 
+### Media
+Images for majority of the store are from [Pokelletor](https://www.pokellector.com/)
+
+### Special Thanks
+Massive thanks to all of the CI tutors for all of there help. 
 
 
