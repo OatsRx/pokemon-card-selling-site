@@ -1,0 +1,4 @@
+.order-history-table {
+    max-height: 416px;
+    overflow-y: auto;
+}

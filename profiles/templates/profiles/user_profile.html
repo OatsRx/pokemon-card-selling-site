@@ -13,13 +13,70 @@
 {% block content %}
 <div class="overlay bg-yellow">
 	<div class="container mb-2 pb-3">
+    <!-- user profile -->
 		<div class="row">
 			<div class="col pt-2">
 				<h2 class="logo-font mb-4">My Profile</h2>
 				<hr>
 			</div>
 		</div>
-        {{ user_profile }}
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p>Delivery Information</p>
+                <form action="{% url 'user_profile' %}" method="POST" id="user-profile-update-form">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <div class="btn text-right bg-yellow text-black">
+                        <button type="submit" class="btn bg-yellow text-black">
+                            <strong><span class="text-uppercase">Update</span></strong>
+                            <span class="icon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- order history -->
+            <div class="col-12 col-lg-6">
+                <p>Order History</p>
+                <div class="order-history-table table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                            {{ order.order_number}}
+                                        </a>
+                                    </td>
+                                    <td>{{order.date}}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                                <li class="small">                                                   
+                                                    {{ item.product.name }} x{{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>£{{order.grand_total}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
 	</div>
 </div>
  
