@@ -7,4 +7,5 @@ def user_profile(request):
     context = {
 
     }
-    return render(request, 'user_profile/user_profile.html', context)
+    return render(request, 'profiles/user_profile.html', context)
+
