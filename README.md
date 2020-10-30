@@ -78,7 +78,11 @@ HTML, CSS, JavaScript and Python code have all been tested for formatting throug
 ## Deployment
 Source code for this application was sent to Github during development and linked to Heroku through a master branch
 that automatically commits from GitHub with environment variables being added manually to Heroku. Through development the
-app was deploying through GitPod on Opera and requires installation of the requirements.txt
+app was deploying through GitPod on Chrome. 
+
+To run app in development install requirements.txt for full functionality. 
+
+The sqlite database was changed during deployment to postgress to
 
 ## Credits
 ### Media
