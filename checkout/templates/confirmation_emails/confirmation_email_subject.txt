@@ -1,0 +1,1 @@
+Confirmation of Purchase @Flamin' Pidgey TCS OrderNumber: {{order.order_number}}
