@@ -76,6 +76,9 @@ interfere with existing Boostrap styles.
 HTML, CSS, JavaScript and Python code have all been tested for formatting through their respective validators.
 
 ## Deployment
+Source code for this application was sent to Github during development and linked to Heroku through a master branch
+that automatically commits from GitHub with environment variables being added manually to Heroku. Through development the
+app was deploying through GitPod on Opera and requires installation of the requirements.txt
 
 ## Credits
 Massive thanks to all of the CI tutors for allof there help. 
