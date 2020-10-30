@@ -132,7 +132,7 @@ WSGI_APPLICATION = 'pokemon_card_shop.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(postgres://pbodxpnmtrudsp:f3e2cc18b6735ab7c84662eb198fe6a63797d2cb484f22230782f598871a119f@ec2-54-228-209-117.eu-west-1.compute.amazonaws.com:5432/d2g54lvr3j2e6u)
+    'default': dj_database_url.parse('postgres://pbodxpnmtrudsp:f3e2cc18b6735ab7c84662eb198fe6a63797d2cb484f22230782f598871a119f@ec2-54-228-209-117.eu-west-1.compute.amazonaws.com:5432/d2g54lvr3j2e6u')
 }
 
 
