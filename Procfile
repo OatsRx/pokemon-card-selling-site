@@ -1,0 +1,1 @@
+web: gunicorn pokemon_card_shop.wsgi:application
