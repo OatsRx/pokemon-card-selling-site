@@ -73,7 +73,9 @@ payment, order confirmation and review, saving customer details and orders.
 The custom CSS of the site will need a review soon as some elements are not aligned properly with each other and some
 interfere with existing Boostrap styles. 
 
-HTML, CSS, JavaScript and Python code have all been tested for formatting through their respective validators.
+HTML, CSS, JavaScript and Python code have all been tested for formatting through their respective validators. During 
+develoment there were issues with webhooks not performing properly. This is a known issue and will have to be 
+revised before the app is released fully.
 
 ## Deployment
 Source code for this application was sent to Github during development and linked to Heroku through a master branch
