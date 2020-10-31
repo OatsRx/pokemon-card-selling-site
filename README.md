@@ -8,13 +8,15 @@ websites to house my own store selling trading cards.
 ## UX
 The UX for this webapp uses Bootstrap, custom CSS and crispy_forms for overall styling and Structure
 
+[WIREFRAMES](https://github.com/OatsRx/pokemon-card-selling-site/tree/master/Wireframes/site)
+
 ### Database Structure
 The product and category fixtures were custom made for this project to reflect the stock of products that
 I currently have in stock.
 
-1. [Products](#)
-2. [Categories](#)
-3. [Models](#)
+1. [Products](https://github.com/OatsRx/pokemon-card-selling-site/blob/master/Wireframes/databasestructure/Products.PNG)
+2. [Categories](https://github.com/OatsRx/pokemon-card-selling-site/blob/master/Wireframes/databasestructure/categories.PNG)
+3. [Models](https://github.com/OatsRx/pokemon-card-selling-site/blob/master/Wireframes/databasestructure/productCategoryModels.PNG)
 
 ## Features
 
@@ -85,7 +87,8 @@ app was deploying through GitPod on Chrome.
 To run app in development install requirements.txt for full functionality. 
 
 The sqlite database was changed during deployment to postgress to allow data to be shared with Heroku. All static and media 
-files were uploaded to an AWS account for static file sharing with Heroku. 
+files were uploaded to an AWS account for static file sharing with Heroku. All secret keys and passwords are stored in environment
+variables in Heroku and Gitpod.
 
 ## Credits
 ### Media
