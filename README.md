@@ -82,7 +82,8 @@ app was deploying through GitPod on Chrome.
 
 To run app in development install requirements.txt for full functionality. 
 
-The sqlite database was changed during deployment to postgress to
+The sqlite database was changed during deployment to postgress to allow data to be shared with Heroku. All static and media 
+files were uploaded to an AWS account for static file sharing with Heroku. 
 
 ## Credits
 ### Media
